@@ -1,0 +1,112 @@
+@import "variable";
+@import "mixin";
+
+/***********************************************************
+                           HEADER
+***********************************************************/
+
+header {
+    height: 85vh;
+    width: 100%;
+    background-color: $space-background;
+    background-image: url("/images/svg/star1300-900.svg");
+    background-size: cover;
+    nav {
+        z-index: 100;
+        box-sizing: border-box;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        padding: 8px 0;
+        background-color: $space-background;
+        opacity: 0.85;
+        vertical-align: center;
+        color: white;
+        font-size: 1.0rem;
+        ol {
+            text-align: center;
+            li {
+                display: inline-block;
+                a {
+                    display: inline-block;
+                    padding: 6px 30px;
+                    color: white;
+                    &:hover {
+                        color: $space-green;
+                        background-color: darken($space-background, 30%);
+                        border-radius: 15px;
+                    }
+                }
+            }
+        }
+        .navmenu {
+            display: none;
+        }
+    }
+    h1 {
+        text-align: center;
+        line-height: 90vh;
+        font-size: 3.0rem;
+        font-weight: 700;
+        letter-spacing: 0.6rem;
+        color: $space-green;
+    }
+    //960px以下の場合の指定（タブレット）
+    @media (max-width: 960px) {
+        nav {
+            padding: 0;
+            height: auto;
+            .navmenu {
+                display: block;
+                font-size: 2.5rem;
+                float: right;
+                padding: 2px 5px 0 0;
+                cursor: pointer;
+            }
+            .navmenu_list {
+                display: none;
+            }
+            //隠しメニュー
+            &.nav-open {
+                opacity: 0.9;
+                background-color: darken($space-background, 7%);
+                .navmenu_list {
+                    display: block;
+                    text-align: left;
+                    padding: 15px 0;
+                    li {
+                        display: block;
+                        line-height: 2.5rem;
+                        text-align: center;
+                        margin: 0 10vw;
+                        border-bottom: 2px solid;
+                        border-color: rgba(#fff, 0.3);
+                        &:last-child {
+                            border-bottom: none;
+                        }
+                        &:hover {
+                            color: $space-green;
+                            border-radius: 0px;
+                            background-color: darken($space-background, 15%);
+                        }
+                        a {
+                            display: block;
+                            &:hover {
+                                background-color: darken($space-background, 15%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+    }
+    //600px以下の場合の指定（モバイル）
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 2.0rem;
+        }
+    }
+}

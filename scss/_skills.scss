@@ -1,0 +1,361 @@
+@import "variable";
+@import "mixin";
+
+/***********************************************************
+                           SKILLS
+***********************************************************/
+
+.skills {
+    @include base-area--pc($earth-background);
+    &__title {
+        @include section-title--pc;
+    }
+    .chart {
+        box-sizing: border-box;
+        padding: 20px;
+        background-color: $earth-blue1;
+        border-radius: 10px;
+        &__title {
+            @include sentence--pc--xlarge($earth-text);
+            text-align: center;
+        }
+        &__area {
+            display: flex;
+            box-sizing: border-box;
+            width: 500px;
+            padding: 20px 0;
+            margin: auto;
+            &__arrow {
+                display: block;
+                width: 50px;
+                text-align: right;
+                font-size: 8rem;
+                color: $earth-text;
+                &:before {
+                    display: block;
+                    content: 'HIGH';
+                    font-size: 1rem;
+                    font-weight: normal;
+                    padding: 10px 3px;
+                    ;
+                }
+                &:after {
+                    display: block;
+                    content: 'LOW';
+                    font-size: 0.85rem;
+                    font-weight: normal;
+                    padding: 3px 6px 10px 3px;
+                }
+            }
+            &__description {
+                width: 450px;
+                padding: 0px 0px 0 30px;
+                dl {
+                    display: flex;
+                }
+                dt {
+                    line-height: 2.5rem;
+                }
+                dd {
+                    @include sentence--pc--basic(white);
+                    $bottomline: 0.2rem;
+                    box-sizing: border-box;
+                    padding-bottom: $bottomline;
+                    line-height: 2.5rem-$bottomline;
+                    margin-left: 10px;
+                    text-shadow: 0 0 0.5rem darken($earth-text-shadow, 15%);
+                }
+            }
+        }
+    }
+    &__list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 50px 0;
+        .skill__item {
+            width: 30%;
+            margin-bottom: 30px;
+        }
+        .skill__title {
+            @include sentence--pc--large($earth-blue1);
+            text-align: center;
+            margin: 10px 0;
+            .skillheart {
+                display: block;
+                margin-top: 5px;
+                font-size: 1.5rem;
+                letter-spacing: 0.7rem;
+            }
+        }
+        .skill__comment {
+            @include sentence--pc--basic(white);
+            text-shadow: 0 0 1rem $earth-text-shadow;
+        }
+    }
+    /***********************************************************
+                     CHARTINDEX用のブレイクポイント
+    ***********************************************************/
+    //tablet
+    @media (max-width: 960px) {
+        .chart {
+            padding: 20px;
+            &__title {
+                @include sentence--tablet--xlarge($earth-text);
+            }
+            &__area {
+                width: 450px;
+                padding: 20px 0;
+                margin: auto;
+                &__arrow {
+                    display: none;
+                }
+                &__description {
+                    width: 430px;
+                    padding: 0px;
+                    margin: auto;
+                    // dl {
+                    //     display: flex;
+                    // }
+                    // dt {
+                    //     line-height: 2.5rem;
+                    // }
+                    dd {
+                        @include sentence--tablet--basic(white);
+                        $bottomline: 0.12rem;
+                        box-sizing: border-box;
+                        padding-bottom: $bottomline;
+                        line-height: 2.5rem-$bottomline;
+                        margin-left: 10px;
+                        // text-shadow: 0 0 0.5rem $earth-text-shadow;
+                    }
+                }
+            }
+        }
+    }
+    //mobile
+    @media (max-width: 750px) {
+        .chart {
+            &__title {
+                @include sentence--mobile--xlarge($earth-text);
+            }
+            &__area {
+                width: 100%;
+                padding-bottom: 0;
+                &__description {
+                    width: 100%;
+                    // padding: 0px;
+                    dl {
+                        flex-direction: column;
+                        padding-bottom: 30px;
+                    }
+                    dt {
+                        text-align: center;
+                        font-size: 1.5rem;
+                        letter-spacing: 0.8rem;
+                    }
+                    dd {
+                        text-align: center;
+                        // $bottomline: 0.2rem;
+                        // padding-bottom: $bottomline;
+                        // line-height: 2.5rem-$bottomline;
+                        margin-left: 0px;
+                        @include sentence--mobile--basic(white);
+                    }
+                }
+            }
+        }
+    }
+    //mobile
+    @media (max-width: 480px) {
+        .chart {
+            &__title {
+                @include sentence--mobile--large($earth-text);
+            }
+            &__area {
+                width: 100%;
+                padding-bottom: 0;
+                &__description {
+                    width: 100%;
+                    dl {
+                        flex-direction: column;
+                        padding-bottom: 15px;
+                    }
+                    dd {
+                        @include sentence--mobile--small(white);
+                    }
+                }
+            }
+        }
+    }
+    /***********************************************************
+                    CHARTLIST用のブレイクポイント
+    ***********************************************************/
+    //tablet
+    @media (max-width: 960px) {
+        &__list {
+            // flex-direction: row;
+            // flex-wrap: wrap;
+            // justify-content: space-between;
+            // margin: 50px 0;
+            .skill__item {
+                width: 45%;
+                // margin-bottom: 30px;
+            }
+            .skill__title {
+                @include sentence--tablet--large($earth-blue1);
+                // text-align: center;
+                // margin: 10px 0;
+                // .skillheart {
+                //     display: block;
+                //     margin-top: 5px;
+                //     font-size: 1.3rem;
+                //     letter-spacing: 1.0rem;
+                // }
+            }
+            .skill__comment {
+                @include sentence--tablet--basic(white);
+                // text-shadow: 0 0 1rem $earth-text-shadow;
+            }
+        }
+    }
+    //mobile&tablet
+    @media (max-width: 600px) {
+        &__list {
+            flex-direction: column;
+            align-items: center;
+            .skill__item {
+                width: 80%;
+                margin-bottom: 40px;
+            }
+            .skill__title {
+                @include sentence--tablet--large($earth-blue1);
+                // text-align: center;
+                // margin: 10px 0;
+                // .skillheart {
+                //     display: block;
+                //     margin-top: 5px;
+                //     font-size: 1.3rem;
+                //     letter-spacing: 1.0rem;
+                // }
+            }
+            .skill__comment {
+                @include sentence--tablet--basic(white);
+                // text-shadow: 0 0 1rem $earth-text-shadow;
+            }
+        }
+    }
+    //mobile
+    @media (max-width: 480px) {
+        &__list {
+            // flex-direction: column;
+            // align-items: center;
+            .skill__item {
+                width: 90%;
+                margin-bottom: 40px;
+            }
+            .skill__title {
+                @include sentence--mobile--large($earth-blue1);
+                // text-align: center;
+                // margin: 10px 0;
+                // .skillheart {
+                //     display: block;
+                //     margin-top: 5px;
+                //     font-size: 1.3rem;
+                //     letter-spacing: 1.0rem;
+                // }
+            }
+            .skill__comment {
+                @include sentence--mobile--basic(white);
+                // text-shadow: 0 0 1rem $earth-text-shadow;
+            }
+        }
+    }
+    /***********************************************************
+                　    共通パーツ用ブレイクポイント
+    ***********************************************************/
+    @media (max-width: 960px) {
+        &__title {
+            @include section-title--tablet;
+        }
+    }
+    //モバイル
+    @media (max-width: 480px) {
+        @include base-area--mobile($earth-background);
+        &__title {
+            @include section-title--mobile;
+        }
+    }
+}
+
+
+/***********************************************************
+                    SKILLheart　共通スタイル
+***********************************************************/
+
+.skillheart {
+    font-family: 'pikufont';
+    font-size: 1.3rem;
+    letter-spacing: 0.6rem;
+    &--1 {
+        &:before {
+            color: $earth-red;
+            content: "\ea9d";
+        }
+        &:after {
+            color: white;
+            opacity: 0.8;
+            content: "\ea9d\ea9d\ea9d\ea9d";
+        }
+    }
+    &--2 {
+        &:before {
+            color: $earth-red;
+            content: "\ea9d\ea9d";
+        }
+        &:after {
+            color: white;
+            opacity: 0.8;
+            content: "\ea9d\ea9d\ea9d";
+        }
+    }
+    &--3 {
+        &:before {
+            color: $earth-red;
+            content: "\ea9d\ea9d\ea9d";
+        }
+        &:after {
+            color: white;
+            opacity: 0.8;
+            content: "\ea9d\ea9d";
+        }
+    }
+    &--4 {
+        &:before {
+            color: $earth-red;
+            content: "\ea9d\ea9d\ea9d\ea9d";
+        }
+        &:after {
+            color: white;
+            opacity: 0.8;
+            content: "\ea9d";
+        }
+    }
+    &--5 {
+        &:before {
+            color: $earth-red;
+            content: "\ea9d\ea9d\ea9d\ea9d\ea9d";
+        }
+    }
+}
+
+//空白飾り用（結局使ってないからあとで消してもOK）
+.skill--decoration {
+    display: block;
+    font-size: 8rem;
+    text-align: center;
+    margin-top: 100px;
+    color: $earth-text;
+    opacity: 0.25;
+}

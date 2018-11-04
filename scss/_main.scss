@@ -1,0 +1,93 @@
+@import "variable";
+@import "mixin";
+
+/***********************************************************
+※mixin/extend/class name命名ルール
+
+-(シングルハイフン) 文字の接続
+__（アンダーバー）　パーツ 
+--（ダブルハイフン）　パターン
+
+*EXAMPLE
+section-border--earth：section borderのearthパターン
+***********************************************************/
+
+
+/***********************************************************
+                            BODY / main
+***********************************************************/
+
+@import url("https://fonts.googleapis.com/css?family=Palanquin+Dark:400,600,700");
+:root {
+    font-size: 14px;
+}
+
+body {
+    font-family: 'Palanquin Dark', 'M+ Type-1 (general-j) Regular', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: $space-link;
+}
+
+ul li,
+ol li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: normal;
+}
+
+mark {
+    background-color: inherit;
+    color: inherit;
+    font-style: normal;
+    font-weight: normal;
+}
+
+u {
+    text-decoration: none;
+}
+
+
+/***********************************************************
+                      SECTION BORDER
+***********************************************************/
+
+.section-border {
+    &--earth {
+        @include border-waves($earth-background);
+    }
+    &--space {
+        @include border-waves($space-background);
+    }
+}
+
+
+/***********************************************************
+                      General class
+***********************************************************/
+
+.bold-text {
+    //和英どちらもboldになる
+    font-family: 'Palanquin Dark', 'M+ Type-1 (general-j) Bold', sans-serif;
+    font-weight: 700;
+}
+
+.semibold-text {
+    //和文のみ細字になるが、英文はfont-weightを指定しても細くならない
+    font-family: 'Palanquin Dark', 'M+ Type-1 (general-j) Medium', sans-serif;
+    font-weight: 600;
+}
+
+//細字は結局使わなかったので
+// .thin-text {
+//     //和文のみ細字になるが、英文はfont-weightを指定しても細くならない
+//     font-family: 'Palanquin Dark', 'M+ Type-1 (general-j) thin', sans-serif;
+// }

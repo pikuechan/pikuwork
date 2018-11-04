@@ -1,0 +1,188 @@
+/***********************************************************
+                         MIXIN
+***********************************************************/
+
+@mixin border-waves($color) {
+    vertical-align: top;
+    background-color: $color;
+    img {
+        vertical-align: top;
+    }
+}
+
+
+/***********************************************************
+                       SECTION BASE AREA
+***********************************************************/
+
+@mixin base-area--pc($color, $content-color:white) {
+    width: 100%;
+    background-color: $color;
+    &__content {
+        display: flex;
+        flex-flow: column;
+        width: 76vw;
+        max-width: 1280px;
+        margin: auto;
+        padding-bottom: 150px;
+        color: $content-color;
+    }
+}
+
+@mixin base-area--mobile($color) {
+    width: 100%;
+    background-color: $color;
+    &__content {
+        width: 86vw;
+        margin: auto;
+        padding-bottom: 100px;
+    }
+}
+
+
+/***********************************************************
+                       SECTION TITLE　
+***********************************************************/
+
+@mixin section-title--pc($title-color:white) {
+    padding: 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: $title-color;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.0rem;
+    letter-spacing: 0.2rem;
+    &:first-letter {
+        font-size: 3.0rem;
+    }
+}
+
+@mixin section-title--tablet($title-color:white) {
+    padding: 0;
+    padding-top: 60px;
+    padding-bottom: 80px;
+    color: $title-color;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 0.18rem;
+    &:first-letter {
+        font-size: 2.7rem;
+    }
+}
+
+@mixin section-title--mobile($title-color:white) {
+    padding: 0;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    color: $title-color;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 0.16rem;
+    &:first-letter {
+        font-size: 2.4rem;
+    }
+}
+
+
+/***********************************************************
+                       SENTENCE STYLE　
+***********************************************************/
+
+
+/* xlarge */
+
+@mixin sentence--pc--xlarge($text-color) {
+    font-size: 1.2rem;
+    letter-spacing: 0.15rem;
+    line-height: 2.4rem;
+    color: $text-color;
+}
+
+@mixin sentence--tablet--xlarge($text-color) {
+    font-size: 1.2rem;
+    letter-spacing: 0.12rem;
+    line-height: 2.2rem;
+    color: $text-color;
+}
+
+@mixin sentence--mobile--xlarge($text-color) {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    line-height: 2.0rem;
+    color: $text-color;
+}
+
+
+/* large */
+
+@mixin sentence--pc--large($text-color) {
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+    line-height: 2.4rem;
+    color: $text-color;
+}
+
+@mixin sentence--tablet--large($text-color) {
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+    line-height: 2.2rem;
+    color: $text-color;
+}
+
+@mixin sentence--mobile--large($text-color) {
+    font-size: 1.1rem;
+    letter-spacing: 0.08rem;
+    line-height: 2.0rem;
+    color: $text-color;
+}
+
+
+/* basic */
+
+@mixin sentence--pc--basic($text-color) {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.9rem;
+    color: $text-color;
+}
+
+@mixin sentence--tablet--basic($text-color) {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.9rem;
+    color: $text-color;
+}
+
+@mixin sentence--mobile--basic($text-color) {
+    font-size: 1rem;
+    letter-spacing: 0.09rem;
+    line-height: 1.8rem;
+    color: $text-color;
+}
+
+
+/* small */
+
+@mixin sentence--pc--small($text-color) {
+    font-size: 0.9rem;
+    letter-spacing: 0.09rem;
+    line-height: 1.6rem;
+    color: $text-color;
+}
+
+@mixin sentence--tablet--small($text-color) {
+    font-size: 0.9rem;
+    letter-spacing: 0.09rem;
+    line-height: 1.6rem;
+    color: $text-color;
+}
+
+@mixin sentence--mobile--small($text-color) {
+    font-size: 0.8rem;
+    letter-spacing: 0.09rem;
+    line-height: 1.5rem;
+    color: $text-color;
+}

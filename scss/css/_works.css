@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/***************************************************************
+                          Color Settings
+****************************************************************/
+/*宇宙背景ver. カラーリング*/
+/*地球背景ver. カラーリング*/
+/***************************************************************
+                          Size Settings
+****************************************************************/
+/***********************************************************
+                         MIXIN
+***********************************************************/
+/***********************************************************
+                       SECTION BASE AREA
+***********************************************************/
+/***********************************************************
+                       SECTION TITLE
+***********************************************************/
+/***********************************************************
+                           WORKS
+***********************************************************/
+.works {
+  width: 100%;
+  background-color: #212E45;
+}
+
+.works__content {
+  width: 76vw;
+  max-width: 1280px;
+  margin: auto;
+  padding-bottom: 150px;
+}
+
+.works h2 {
+  padding: 0;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.0rem;
+  letter-spacing: 0.2rem;
+}
+
+.works h2:first-letter {
+  font-size: 3.0rem;
+}
+
+@media (max-width: 960px) {
+  .works h2 {
+    padding: 0;
+    padding-top: 60px;
+    padding-bottom: 80px;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 0.18rem;
+  }
+  .works h2:first-letter {
+    font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .works h2 {
+    padding: 0;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 0.16rem;
+  }
+  .works h2:first-letter {
+    font-size: 2.4rem;
+  }
+}

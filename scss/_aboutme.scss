@@ -1,0 +1,273 @@
+@import "variable";
+@import "mixin";
+
+/***********************************************************
+                           ABOUT ME
+***********************************************************/
+
+.aboutme {
+    @include base-area--pc($earth-background);
+    &__title {
+        @include section-title--pc;
+    }
+    &__profile {
+        @include sentence--pc--large($earth-text);
+        display: flex;
+        flex-flow: row;
+        text-shadow: 0px 0px 1rem $earth-text-shadow;
+        article {
+            margin-bottom: 50px;
+            margin-top: 20px;
+        }
+        figcaption {
+            margin-left: 5vw;
+            img {
+                width: 300px;
+                height: 300px;
+                border-radius: 300px;
+            }
+        }
+        .emphasis {
+            // color: lighten($earth-blue1, 12%);
+            color: $earth-blue1;
+            text-shadow: none;
+            padding: 0 10px;
+        }
+    }
+    // &__chronology {}
+    //タブレット
+    @media (max-width: 960px) {
+        &__title {
+            @include section-title--tablet;
+        }
+        &__profile {
+            @include sentence--tablet--large($earth-text);
+            display: flex;
+            flex-flow: column-reverse;
+            article {
+                margin: 80px 0;
+            }
+            figcaption {
+                margin-left: 0vw;
+                margin: auto;
+                img {
+                    width: 50vw;
+                    height: auto;
+                    min-width: 240px;
+                    min-height: 240px;
+                    max-width: 340px;
+                    max-height: 340px;
+                    border-radius: 300px;
+                }
+            }
+        }
+    }
+    //モバイル
+    @media (max-width: 480px) {
+        @include base-area--mobile($earth-background);
+        &__title {
+            @include section-title--mobile;
+        }
+        &__profile {
+            @include sentence--mobile--large($earth-text);
+            article {
+                margin: 60px 0;
+            }
+            img {
+                width: 50vw;
+                height: auto;
+                min-width: 240px;
+                min-height: 240px;
+                max-width: 340px;
+                max-height: 340px;
+                border-radius: 300px;
+                margin-left: 0vw;
+                margin: auto;
+            }
+        }
+    }
+}
+
+
+/***********************************************************
+                           CHRONOLOGY
+***********************************************************/
+
+.aboutme__chronology {
+    margin: 120px 0 0 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    li {
+        position: relative;
+    }
+    /* vartical line */
+    &:before {
+        content: '';
+        position: absolute;
+        top: 12px;
+        bottom: 0;
+        width: 8px;
+        background: $earth-light1;
+        left: 24%;
+        margin-left: -10px;
+    }
+    /* time icons */
+    >li .chronology__icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.4em;
+        line-height: 40px;
+        -webkit-font-smoothing: antialiased;
+        position: absolute;
+        color: $earth-light1;
+        background: $earth-background;
+        border-radius: 50%;
+        box-shadow: 0 0 0 6px $earth-light1;
+        text-align: center;
+        left: 24%;
+        top: 12px;
+        margin: 0 0 0 -25px;
+    }
+    /* time label */
+    >li .chronology__timelabel {
+        display: block;
+        width: 18%;
+        padding-right: 80px;
+        margin-top: 15px;
+        text-align: right;
+        position: absolute;
+        span {
+            display: inline-block;
+            text-align: right;
+            color: $earth-light1;
+            &.num {
+                font-size: 1.8rem;
+            }
+            &.char {
+                font-size: 1.0rem;
+            }
+        }
+    }
+    /* Right content */
+    >li .chronology__timecontent {
+        @include sentence--pc--basic($earth-blue1);
+        margin: 0 10% 40px 30%;
+        background: $earth-light1;
+        padding: 16px 24px;
+        position: relative;
+        border-radius: 10px;
+        h3 {
+            @include sentence--pc--basic(lighten($earth-blue1, 5%));
+            margin-top: 0px;
+            padding: 0 0 10px 0;
+            border-bottom: 2px dotted lighten($earth-blue1, 20%);
+        }
+        p {
+            @include sentence--pc--small(lighten($earth-blue1, 5%));
+            padding: 10px 0;
+        }
+        a {
+            @include sentence--pc--small(lighten($earth-blue1, 20%));
+            display: inline-block;
+        }
+        /* The triangle */
+        &:after {
+            right: 100%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-right-color: $earth-light1;
+            border-width: 10px;
+            top: 20px;
+        }
+    }
+    // 奇数行吹き出し設定
+    >li:nth-child(odd) {
+        .chronology__timecontent {
+            background: $earth-blue1;
+            h3 {
+                color: lighten($earth-blue1, 60%);
+                margin-top: 0px;
+                padding: 0 0 10px 0;
+                border-bottom: 2px dotted lighten($earth-blue1, 30%);
+            }
+            p {
+                color: lighten($earth-blue1, 60%);
+            }
+            a {
+                color: lighten($earth-blue1, 40%);
+                display: inline-block;
+            }
+        }
+        .chronology__timecontent:after {
+            border-right-color: $earth-blue1;
+        }
+    }
+}
+
+// Mobile & Tablet
+@media screen and (max-width: 960px) {
+    .aboutme__chronology {
+        margin-top: 0px;
+        &:before {
+            display: none;
+        }
+        >li {
+            .chronology__timelabel {
+                width: 100%;
+                position: relative;
+                padding: 0 0 20px 60px;
+                ;
+                text-align: left;
+                span {
+                    display: inline-block;
+                    text-align: left;
+                    color: $earth-light1;
+                    &.num {
+                        font-size: 1.5rem;
+                    }
+                    &.char {
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+            .chronology__timecontent {
+                margin: 10px 0 30px 0;
+                padding: 1em;
+                &:after {
+                    //三角矢印
+                    right: auto;
+                    left: 20px;
+                    border-right-color: transparent;
+                    border-bottom-color: $earth-light1;
+                    top: -20px;
+                }
+                h3 {
+                    @include sentence--tablet--basic($earth-blue1);
+                }
+                p {
+                    @include sentence--tablet--small($earth-blue1);
+                }
+            }
+            .chronology__icon {
+                width: 30px;
+                height: 30px;
+                font-size: 1.2rem;
+                line-height: 2.2rem;
+                box-shadow: 0 0 0 4px $earth-light1;
+                position: relative;
+                float: left;
+                left: auto;
+                margin: -55px 5px 0 15px;
+            }
+            &:nth-child(odd) .chronology__timecontent:after {
+                border-right-color: transparent;
+                border-bottom-color: $earth-blue1;
+            }
+        }
+    }
+}
