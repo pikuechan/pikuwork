@@ -13,10 +13,12 @@
     .chart {
         box-sizing: border-box;
         padding: 20px;
-        background-color: $earth-blue1;
+        // background-color: $earth-blue1;
+        background-color: darken($earth-background, 10%);
         border-radius: 10px;
         &__title {
             @include sentence--pc--xlarge($earth-text);
+            filter: drop-shadow(2px 2px 0px $earth-contents-shadow);
             text-align: center;
         }
         &__area {
@@ -31,6 +33,7 @@
                 text-align: right;
                 font-size: 8rem;
                 color: $earth-text;
+                filter: drop-shadow(2px 2px 0px $earth-contents-shadow);
                 &:before {
                     display: block;
                     content: 'HIGH';
@@ -55,6 +58,7 @@
                 }
                 dt {
                     line-height: 2.5rem;
+                    filter: drop-shadow(2px 2px 0px $earth-contents-shadow);
                 }
                 dd {
                     @include sentence--pc--basic(white);
@@ -63,7 +67,7 @@
                     padding-bottom: $bottomline;
                     line-height: 2.5rem-$bottomline;
                     margin-left: 10px;
-                    text-shadow: 0 0 0.5rem darken($earth-text-shadow, 15%);
+                    filter: drop-shadow(2px 2px 0px $earth-contents-shadow);
                 }
             }
         }
@@ -305,7 +309,7 @@
         }
         &:after {
             color: white;
-            opacity: 0.8;
+            // opacity: 0.8;
             content: "\ea9d\ea9d\ea9d\ea9d";
         }
     }
@@ -316,7 +320,7 @@
         }
         &:after {
             color: white;
-            opacity: 0.8;
+            // opacity: 0.8;
             content: "\ea9d\ea9d\ea9d";
         }
     }
@@ -327,7 +331,7 @@
         }
         &:after {
             color: white;
-            opacity: 0.8;
+            // opacity: 0.8;
             content: "\ea9d\ea9d";
         }
     }
@@ -338,7 +342,7 @@
         }
         &:after {
             color: white;
-            opacity: 0.8;
+            // opacity: 0.8;
             content: "\ea9d";
         }
     }

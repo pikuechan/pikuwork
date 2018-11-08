@@ -18,6 +18,28 @@
         article {
             margin-bottom: 50px;
             margin-top: 20px;
+            p {
+                margin: 20px 0;
+                padding: 10px 20px;
+                background-color: darken($earth-background, 10%);
+                border-radius: 10px;
+                // text-shadow: none;
+                text-shadow: 2px 2px 0rem $earth-contents-shadow;
+                span {
+                    display: block;
+                    text-align: center;
+                    margin: auto;
+                }
+                .keyword {
+                    // @include sentence--pc--basic($earth-text);
+                    display: inline-block;
+                    &:after {
+                        content: " , ";
+                        color: $earth-blue1;
+                        padding-right: 5px;
+                    }
+                }
+            }
         }
         figcaption {
             margin-left: 5vw;

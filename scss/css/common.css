@@ -581,6 +581,30 @@ footer .copyright a {
   margin-top: 20px;
 }
 
+.aboutme__profile article p {
+  margin: 20px 0;
+  padding: 10px 20px;
+  background-color: #87a017;
+  border-radius: 10px;
+  text-shadow: 2px 2px 0rem #617311;
+}
+
+.aboutme__profile article p span {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+.aboutme__profile article p .keyword {
+  display: inline-block;
+}
+
+.aboutme__profile article p .keyword:after {
+  content: " , ";
+  color: #39433b;
+  padding-right: 5px;
+}
+
 .aboutme__profile figcaption {
   margin-left: 5vw;
 }
@@ -1775,7 +1799,7 @@ footer .copyright a {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 20px;
-  background-color: #39433b;
+  background-color: #87a017;
   border-radius: 10px;
 }
 
@@ -1784,6 +1808,8 @@ footer .copyright a {
   letter-spacing: 0.15rem;
   line-height: 2.4rem;
   color: #f7f7f7;
+  -webkit-filter: drop-shadow(2px 2px 0px #617311);
+  filter: drop-shadow(2px 2px 0px #617311);
   text-align: center;
 }
 
@@ -1804,6 +1830,8 @@ footer .copyright a {
   text-align: right;
   font-size: 8rem;
   color: #f7f7f7;
+  -webkit-filter: drop-shadow(2px 2px 0px #617311);
+  filter: drop-shadow(2px 2px 0px #617311);
 }
 
 .skills .chart__area__arrow:before {
@@ -1835,6 +1863,8 @@ footer .copyright a {
 
 .skills .chart__area__description dt {
   line-height: 2.5rem;
+  -webkit-filter: drop-shadow(2px 2px 0px #617311);
+  filter: drop-shadow(2px 2px 0px #617311);
 }
 
 .skills .chart__area__description dd {
@@ -1847,7 +1877,8 @@ footer .copyright a {
   padding-bottom: 0.2rem;
   line-height: 2.3rem;
   margin-left: 10px;
-  text-shadow: 0 0 0.5rem #3c470a;
+  -webkit-filter: drop-shadow(2px 2px 0px #617311);
+  filter: drop-shadow(2px 2px 0px #617311);
 }
 
 .skills__list {
@@ -2118,7 +2149,6 @@ footer .copyright a {
 
 .skillheart--1:after {
   color: white;
-  opacity: 0.8;
   content: "\ea9d\ea9d\ea9d\ea9d";
 }
 
@@ -2129,7 +2159,6 @@ footer .copyright a {
 
 .skillheart--2:after {
   color: white;
-  opacity: 0.8;
   content: "\ea9d\ea9d\ea9d";
 }
 
@@ -2140,7 +2169,6 @@ footer .copyright a {
 
 .skillheart--3:after {
   color: white;
-  opacity: 0.8;
   content: "\ea9d\ea9d";
 }
 
@@ -2151,7 +2179,6 @@ footer .copyright a {
 
 .skillheart--4:after {
   color: white;
-  opacity: 0.8;
   content: "\ea9d";
 }
 
